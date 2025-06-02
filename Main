@@ -34,32 +34,27 @@ public class matkonet2 {
 		System.out.print("Amount of people that need to pay delivery fee: "+people);
 	}
 	
-	public static int [] checkAge(int age)
+	public static int[] checkAge(int age)
 	{
-		int [] arr= new int [3];
-		for(int i=0; i<3;i++)
+		int[] arr= new int[3];
+		if(age > 11)
 		{
-			arr[i]=0;
-		}
-		
-		if(age>11)
-		{
-			arr[0]=1;
-			if(age>15)
+			arr[0] = 1;
+			if(age > 15)
 			{
-				arr[1]=1;
-				if(age>17)
+				arr[1] = 1;
+				if(age > 17)
 				{
-					arr[2]=1;
+					arr[2] = 1;
 				}
 				else
 				{
-					arr[2]=0;
+					arr[2] = 0;
 				}
 			}
 			else
 			{
-				arr[1]=0;
+				arr[1] = 0;
 			}
 		}
 		return arr;
@@ -69,17 +64,17 @@ public class matkonet2 {
 	{
 		int counter =0;
 		int age=0;
-		boolean flag =true;
+		boolean flag = true;
 		System.out.println("Insert your age: ");
 		age= input.nextInt();
 		while(age>11)
 		{
 			for(int i=0;i<3;i++)
 			{
-			if(checkAge(age)[i]!=1)
-			{
-				flag=false;
-			}
+				if(checkAge(age)[i]!=1)
+				{
+					flag=false;
+				}
 			}
 			if(flag ==true)
 			{
