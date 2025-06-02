@@ -62,29 +62,21 @@ public class matkonet2 {
 	
 	public static int count()
 	{
-		int counter =0;
-		int age=0;
-		boolean flag = true;
+		int[] counters = new int[3];    // define 3 counters starting at {0,0,0}
 		System.out.println("Insert your age: ");
-		age= input.nextInt();
-		while(age>11)
+		int age = input.nextInt();
+		int[] visitor = checkAge(age);
+		while (counters[0] == 1)
 		{
-			for(int i=0;i<3;i++)
+			for(int i = 0; i < 3; i++)
 			{
-				if(checkAge(age)[i]!=1)
-				{
-					flag=false;
-				}
-			}
-			if(flag ==true)
-			{
-				counter++;
+				counters[i] += visitor[i];
 			}
 			System.out.println("Insert your age: ");
-			age= input.nextInt();
-			flag= true;
+			age = input.nextInt();
+			visitor = checkAge(age);
 		}
-		return counter;
+		System.out.println(counters[0] + ", " + counters[1] + ", " + counters[2]);
 	}
 	
 	
