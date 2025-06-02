@@ -2,14 +2,13 @@ package matkonet2Exercise;
 
 public class ReportCard {
 	private String stuName; 
-    private Subject[] subArray; 
+	private Subject[] subArray; 
     
     
     public ReportCard(String name, int num)
     {
-    	setStuName(name);
-    	Subject [] setSubArray = new Subject [num];
-    	setSubArray(setSubArray );
+    	stuName = name;
+    	subArray = new Subject[num];
     }
     
     public double average() 
@@ -19,22 +18,15 @@ public class ReportCard {
     	for(int i=0;i<subArray.length;i++)
     	{
     		count++;
-    		sum+=subArray[i].getGrade();
+    		sum += subArray[i].getGrade();
     	}
-    	return sum/count;
+    	return (double)sum / count;
     }
 
     
     public Boolean isExcellent() 
     {
-    if(average()>84)
-    {
-    	return true;
-    }
-    else
-    {
-    	return false;
-    }
+    	return average() >= 85;
     }
 
     
@@ -42,15 +34,4 @@ public class ReportCard {
 		return stuName;
 	}
 
-	public void setStuName(String stuName) {
-		this.stuName = stuName;
-	}
-
-	public Subject[] getSubArray() {
-		return subArray;
-	}
-
-	public void setSubArray(Subject[] subArray) {
-		this.subArray = subArray;
-	}
 }
