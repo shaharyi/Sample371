@@ -11,17 +11,10 @@ public class matkonet2 {
 		int sum=0;
 		for( int i=0; i<amount;i++)
 		{
-		System.out.println("Enter price");
-		sum+=input.nextInt();
+			System.out.println("Enter price");
+			sum+=input.nextInt();
 		}
-		if(sum>150)
-		{	
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return sum > 150;
 	}
 	
 	public static void checkAll()
@@ -33,9 +26,9 @@ public class matkonet2 {
 		{
 			System.out.println("Enter amount of items");
 			amount= input.nextInt();
-			if(check(amount)==true)
+			if(check(amount))
 			{
-			people++;	
+				people++;	
 			}
 		}
 		System.out.print("Amount of people that need to pay delivery fee: "+people);
@@ -101,13 +94,13 @@ public class matkonet2 {
 	
 	
 	
-	public static void printExcellent(ReportCard [] array)
+	public static void printExcellent(ReportCard[] arr)
 	{
-		for(int i=0;i<array.length;i++)
+		for(int i=0;i<arr.length;i++)
 		{
-			if(array[i].isExcellent())
+			if(arr[i].isExcellent())
 			{
-				System.out.println(array[i].getStuName());
+				System.out.println(arr[i].getStuName());
 			}
 		}
 	}
